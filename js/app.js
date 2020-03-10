@@ -2,29 +2,33 @@
 /* eslint-disable indent */
 
 var SeattleShop = {
+    name : 'Seattle',
     minCust : 23,
     maxCust : 65,
     avgSale : 6.3,
+    openHour : 6,
+    closeHour : 19,
     result : function(){
-        var time = 5;
+        var time = this.openHour;
         var resultArray =[];
         var cookieTotal = 0;
-        for (var i=0; i < 14; i++){
+        for (var i=0; i <= (this.closeHour-this.openHour); i++){
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
-            time += 1;
             if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time>=13 && time <19){
+            } else if (time>=13 && time <this.closeHour){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 19){
-                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
+            } else if (time === this.closeHour){
+                var closeTime = time-12;
+                resultArray.push( closeTime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
+            time += 1;
         }
         return resultArray;
     },
@@ -41,29 +45,33 @@ function SeattleSales(){
 }
 
 var TokyoShop = {
+    name: 'Tokyo',
     minCust : 3,
     maxCust : 24,
     avgSale : 1.2,
+    openHour : 6,
+    closeHour : 19,
     result : function(){
-        var time = 5;
+        var time = this.openHour;
         var resultArray =[];
         var cookieTotal = 0;
-        for (var i=0; i < 14; i++){
+        for (var i=0; i <= (this.closeHour-this.openHour); i++){
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
-            time += 1;
             if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time>=13 && time <19){
+            } else if (time>=13 && time < this.closeHour){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 19){
-                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
+            } else if (time === this.closeHour){
+                var closeTime = time-12;
+                resultArray.push( closeTime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
+            time += 1;
         }
         return resultArray;
     },
@@ -81,29 +89,33 @@ function TokyoSales(){
 
 
 var DubaiShop = {
+    name : 'Dubai',
     minCust : 11,
     maxCust : 38,
     avgSale : 3.7,
+    openHour : 6,
+    closeHour : 19,
     result : function(){
-        var time = 5;
+        var time = this.openHour;
         var resultArray =[];
         var cookieTotal = 0;
-        for (var i=0; i < 14; i++){
+        for (var i=0; i <= (this.closeHour-this.openHour); i++){
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
-            time += 1;
             if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time>=13 && time <19){
+            } else if (time>=13 && time < this.closeHour){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 19){
-                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
+            } else if (time === this.closeHour){
+                var closeTime = time-12;
+                resultArray.push( closeTime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
+            time += 1;
         }
         return resultArray;
     },
@@ -121,29 +133,33 @@ function DubaiSales(){
 
 
 var ParisShop = {
+    name : 'Paris',
     minCust : 20,
     maxCust : 38,
     avgSale : 2.3,
+    openHour : 6,
+    closeHour : 19,
     result : function(){
-        var time = 5;
+        var time = this.openHour;
         var resultArray =[];
         var cookieTotal = 0;
-        for (var i=0; i < 14; i++){
+        for (var i=0; i <= (this.closeHour-this.openHour); i++){
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
-            time += 1;
             if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time>=13 && time <19){
+            } else if (time>=13 && time < this.closeHour){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 19){
-                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
+            } else if (time === this.closeHour){
+                var closeTime = time-12;
+                resultArray.push( closeTime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
+            time += 1;
         }
         return resultArray;
     },
@@ -161,29 +177,33 @@ function ParisSales(){
 
 
 var LimaShop = {
+    name: 'Lima',
     minCust : 2,
     maxCust : 16,
     avgSale : 4.6,
+    openHour : 6,
+    closeHour : 19,
     result : function(){
-        var time = 5;
+        var time = this.openHour;
         var resultArray =[];
         var cookieTotal = 0;
-        for (var i=0; i < 14; i++){
+        for (var i=0; i <= (this.closeHour-this.openHour); i++){
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
-            time += 1;
             if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time>=13 && time <19){
+            } else if (time>=13 && time < this.closeHour){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 19){
-                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
+            } else if (time === this.closeHour){
+                var closeTime = time-12;
+                resultArray.push( closeTime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
+            time += 1;
         }
         return resultArray;
     },
