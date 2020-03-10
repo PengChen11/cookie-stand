@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable indent */
 
 var SeattleShop = {
@@ -13,17 +14,17 @@ var SeattleShop = {
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
             if (time < 12){
-                resultArray.push(time + "am: " + cookieSold + " cookies ");
+                resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 12){
-                resultArray.push(time + "pm: " + cookieSold + " cookies ");
+                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time>12 && time <19){
                 var newtime=time-12;
-                resultArray.push(newtime + "pm: " + cookieSold + " cookies ");
+                resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 19){
-                resultArray.push( "7pm: " + cookieSold + " cookies ");
+                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
@@ -55,17 +56,17 @@ var TokyoShop = {
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
             if (time < 12){
-                resultArray.push(time + "am: " + cookieSold + " cookies ");
+                resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 12){
-                resultArray.push(time + "pm: " + cookieSold + " cookies ");
+                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time>12 && time <19){
                 var newtime=time-12;
-                resultArray.push(newtime + "pm: " + cookieSold + " cookies ");
+                resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 19){
-                resultArray.push( "7pm: " + cookieSold + " cookies ");
+                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
@@ -98,17 +99,17 @@ var DubaiShop = {
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
             if (time < 12){
-                resultArray.push(time + "am: " + cookieSold + " cookies ");
+                resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 12){
-                resultArray.push(time + "pm: " + cookieSold + " cookies ");
+                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time>12 && time <19){
                 var newtime=time-12;
-                resultArray.push(newtime + "pm: " + cookieSold + " cookies ");
+                resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 19){
-                resultArray.push( "7pm: " + cookieSold + " cookies ");
+                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
@@ -141,17 +142,17 @@ var ParisShop = {
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
             if (time < 12){
-                resultArray.push(time + "am: " + cookieSold + " cookies ");
+                resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 12){
-                resultArray.push(time + "pm: " + cookieSold + " cookies ");
+                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time>12 && time <19){
                 var newtime=time-12;
-                resultArray.push(newtime + "pm: " + cookieSold + " cookies ");
+                resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 19){
-                resultArray.push( "7pm: " + cookieSold + " cookies ");
+                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
@@ -184,17 +185,17 @@ var LimaShop = {
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
             if (time < 12){
-                resultArray.push(time + "am: " + cookieSold + " cookies ");
+                resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 12){
-                resultArray.push(time + "pm: " + cookieSold + " cookies ");
+                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time>12 && time <19){
                 var newtime=time-12;
-                resultArray.push(newtime + "pm: " + cookieSold + " cookies ");
+                resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
             } else if (time === 19){
-                resultArray.push( "7pm: " + cookieSold + " cookies ");
+                resultArray.push( '7pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
                 resultArray.push('Total: ' + cookieTotal + 'cookies');
             }
