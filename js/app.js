@@ -13,13 +13,10 @@ var SeattleShop = {
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
-            if (time < 12){
+            if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 12){
-                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
-                cookieTotal = cookieTotal + cookieSold;
-            } else if (time>12 && time <19){
+            } else if (time>=13 && time <19){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
@@ -55,13 +52,10 @@ var TokyoShop = {
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
-            if (time < 12){
+            if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 12){
-                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
-                cookieTotal = cookieTotal + cookieSold;
-            } else if (time>12 && time <19){
+            } else if (time>=13 && time <19){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
@@ -98,13 +92,10 @@ var DubaiShop = {
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
-            if (time < 12){
+            if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 12){
-                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
-                cookieTotal = cookieTotal + cookieSold;
-            } else if (time>12 && time <19){
+            } else if (time>=13 && time <19){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
@@ -141,13 +132,10 @@ var ParisShop = {
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
-            if (time < 12){
+            if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 12){
-                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
-                cookieTotal = cookieTotal + cookieSold;
-            } else if (time>12 && time <19){
+            } else if (time>=13 && time <19){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
@@ -184,13 +172,10 @@ var LimaShop = {
             var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
             var cookieSold = Math.floor(this.avgSale*cusNum);
             time += 1;
-            if (time < 12){
+            if (time <= 12){
                 resultArray.push(time + 'am: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
-            } else if (time === 12){
-                resultArray.push(time + 'pm: ' + cookieSold + ' cookies ');
-                cookieTotal = cookieTotal + cookieSold;
-            } else if (time>12 && time <19){
+            } else if (time>=13 && time <19){
                 var newtime=time-12;
                 resultArray.push(newtime + 'pm: ' + cookieSold + ' cookies ');
                 cookieTotal = cookieTotal + cookieSold;
