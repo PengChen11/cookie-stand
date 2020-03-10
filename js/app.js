@@ -42,6 +42,7 @@ function SeattleSales(){
         childEl.textContent = SeattleArray[SeattleIndex];
         parentEl.appendChild(childEl);
     }
+    document.getElementById('SeattleBut').disabled = true;
 }
 
 var TokyoShop = {
@@ -85,6 +86,8 @@ function TokyoSales(){
         childEl.textContent = TokyoArray[TokyoIndex];
         parentEl.appendChild(childEl);
     }
+    document.getElementById('TokyoBut').disabled = true;
+
 }
 
 
@@ -129,6 +132,8 @@ function DubaiSales(){
         childEl.textContent = DubaiArray[DubaiIndex];
         parentEl.appendChild(childEl);
     }
+    document.getElementById('DubaiBut').disabled = true;
+
 }
 
 
@@ -173,6 +178,8 @@ function ParisSales(){
         childEl.textContent = resultArray[Index];
         parentEl.appendChild(childEl);
     }
+    document.getElementById('ParisBut').disabled = true;
+
 }
 
 
@@ -217,4 +224,6 @@ function LimaSales(){
         childEl.textContent = resultArray[Index];
         parentEl.appendChild(childEl);
     }
+    document.getElementById('LimaBut').disabled = true;
+
 }
