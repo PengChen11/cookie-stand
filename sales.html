@@ -79,20 +79,50 @@
               </table>
         </section>    
         <section id="sales">
+            <style>
+                #SeatleReport {
+                    display:none;
+                }
+                #TokyoReport {
+                    display: none;
+                }
+                #DubaiReport {
+                    display: none;
+                }
+                #ParisReport {
+                    display: none;
+                }
+
+            </style>
             <ul id="Seattle">
-                <button id="SeattleBut" onclick="SeattleSales()">Click here to see Seattle Sales report</button>
+                <button id="SeattleBut" onclick="show('SeattleReport')">Click here to see Seattle Sales report</button>
+                <div id="SeattleReport">
+                    <script>SeattleSales()</script>
+                </div>
             </ul>
             <ul id="Tokyo">
-                <button id="TokyoBut"onclick="TokyoSales()">Click here to see Tokyo Sales report</button>
+                <button id="TokyoBut" onclick="show('TokyoReport')">Click here to see Tokyo Sales report</button>
+                <div id="TokyoReport">
+                    <script>TokyoSales()</script>
+                </div>
             </ul>
             <ul id="Dubai">
-                <button id = "DubaiBut" onclick="DubaiSales()">Click here to see Dubai Sales report</button>
+                <button id = "DubaiBut" onclick="show('DubaiReport')">Click here to see Dubai Sales report</button>
+                <div id="DubaiReport">
+                    <script>DubaiSales()</script>
+                </div>
             </ul>
             <ul id="Paris">
-                <button id = "ParisBut" onclick="ParisSales()">Click here to see Paris Sales report</button>
+                <button id = "ParisBut" onclick="show('ParisReport')">Click here to see Paris Sales report</button>
+                <div id="ParisReport">
+                    <script>ParisSales()</script>
+                </div>
             </ul>
             <ul id="Lima">
-                <button id= "LimaBut" onclick="LimaSales()">Click here to see Lima Sales report</button>
+                <button id= "LimaBut" onclick="show('LimaReport')">Click here to see Lima Sales report</button>
+                <div id="LimaReport">
+                    <script>LimaSales()</script>
+                </div>
             </ul>
 
         </section>

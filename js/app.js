@@ -1,5 +1,58 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable indent */
+// class CreateShop {
+//     constructor(name, minCust, maxCust, avgSale, openHour, closeHour) {
+//         this.name = name;
+//         this.minCust = minCust;
+//         this.maxCust = maxCust;
+//         this.avgSale = avgSale;
+//         this.openHour = openHour;
+//         this.closeHour = closeHour;
+//         this.getStoreHour = function(){
+//             var reportHourArray = [];
+//             for (var i=this.openHour; i<=this.closeHour; i++){
+//                 reportHourArray.push(i);
+//             }
+//             return reportHourArray;
+//         },
+//         this.getHourSale = function(){
+//             var hourSaleArray = [];
+//             for (var i=this.openHour; i<=this.closeHour; i++){
+//                 var cusNum = Math.floor(Math.random()* (this.maxCust-this.minCust)) + this.minCust;
+//                 var cookieSold = Math.floor(this.avgSale*cusNum);
+//                 hourSaleArray.push(cookieSold);
+//             }
+//             return hourSaleArray;
+//         };
+//     }
+// }
+
+function show(ElementID) {
+    var x = document.getElementById(ElementID);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}
+
+
+// function newStoreReport (name, minCust, maxCust, avgSale, openHour, closeHour){
+//     var storeName = new CreateShop(name, minCust, maxCust, avgSale, openHour, closeHour);
+//     var hourArray = storeName.name.getStoreHour();
+//     var saleArray = storeName.name.getHourSale();
+//     for (var i = 0; i < hourArray.length; i++){
+//         var parentEl = document.getElementById('SeattleReport');
+//         var childEl = document.createElement('li');
+//         if (hourArray[i]<=12){
+//             childEl.textContent = hourArray[i] + 'am: ' + saleArray[i] + ' cookies';
+//             parentEl.appendChild(childEl);
+//         }
+//     }
+// }
+
+
+
 
 var SeattleShop = {
     name : 'Seattle',
@@ -37,12 +90,11 @@ var SeattleShop = {
 function SeattleSales(){
     var SeattleArray = SeattleShop.result();
     for (var SeattleIndex = 0; SeattleIndex < SeattleArray.length; SeattleIndex++){
-        var parentEl = document.getElementById('Seattle');
+        var parentEl = document.getElementById('SeattleReport');
         var childEl = document.createElement('li');
         childEl.textContent = SeattleArray[SeattleIndex];
         parentEl.appendChild(childEl);
     }
-    document.getElementById('SeattleBut').disabled = true;
 }
 
 var TokyoShop = {
@@ -81,12 +133,11 @@ var TokyoShop = {
 function TokyoSales(){
     var TokyoArray = TokyoShop.result();
     for (var TokyoIndex = 0; TokyoIndex < TokyoArray.length; TokyoIndex++){
-        var parentEl = document.getElementById('Tokyo');
+        var parentEl = document.getElementById('TokyoReport');
         var childEl = document.createElement('li');
         childEl.textContent = TokyoArray[TokyoIndex];
         parentEl.appendChild(childEl);
     }
-    document.getElementById('TokyoBut').disabled = true;
 
 }
 
@@ -127,12 +178,11 @@ var DubaiShop = {
 function DubaiSales(){
     var DubaiArray = DubaiShop.result();
     for (var DubaiIndex = 0; DubaiIndex < DubaiArray.length; DubaiIndex++){
-        var parentEl = document.getElementById('Dubai');
+        var parentEl = document.getElementById('DubaiReport');
         var childEl = document.createElement('li');
         childEl.textContent = DubaiArray[DubaiIndex];
         parentEl.appendChild(childEl);
     }
-    document.getElementById('DubaiBut').disabled = true;
 
 }
 
@@ -173,13 +223,11 @@ var ParisShop = {
 function ParisSales(){
     var resultArray = TokyoShop.result();
     for (var Index = 0; Index < resultArray.length; Index++){
-        var parentEl = document.getElementById('Paris');
+        var parentEl = document.getElementById('ParisReport');
         var childEl = document.createElement('li');
         childEl.textContent = resultArray[Index];
         parentEl.appendChild(childEl);
     }
-    document.getElementById('ParisBut').disabled = true;
-
 }
 
 
@@ -219,11 +267,9 @@ var LimaShop = {
 function LimaSales(){
     var resultArray = LimaShop.result();
     for (var Index = 0; Index < resultArray.length; Index++){
-        var parentEl = document.getElementById('Lima');
+        var parentEl = document.getElementById('LimaReport');
         var childEl = document.createElement('li');
         childEl.textContent = resultArray[Index];
         parentEl.appendChild(childEl);
     }
-    document.getElementById('LimaBut').disabled = true;
-
 }
