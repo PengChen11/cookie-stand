@@ -50,10 +50,15 @@ header {
     margin-left: 70%;
 
 }
-
+ul {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color:indigo;
+}
+button {
+    font-size: 20px;
+}
 #sales {
-    color: brown;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     line-height: 1.7em;
 }
