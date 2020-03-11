@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable indent */
+// this is the function to the button, when click, show the report table, click again, hide the report
 function show(ElementID) {
     var x = document.getElementById(ElementID);
     if (x.style.display === 'none') {
@@ -9,8 +10,11 @@ function show(ElementID) {
     }
 }
 
+// Here's how I defined the constructor
 
 class CreateShop {
+    // this constructor defines 6 properties, but as of right now, you can hard code the openHour and closeHour
+    // I do it in this way for future reference
     constructor(name, minCust, maxCust, avgSale, openHour, closeHour) {
         this.name = name,
         this.minCust = minCust,
@@ -18,6 +22,7 @@ class CreateShop {
         this.avgSale = avgSale,
         this.openHour = openHour,
         this.closeHour = closeHour,
+        //you proberbly don't need the getStoreHour feature yet
         this.getStoreHour = function(){
             var reportHourArray = [];
             for (var i=this.openHour; i<=this.closeHour; i++){
@@ -25,6 +30,7 @@ class CreateShop {
             }
             return reportHourArray;
         },
+        //when ever run this feature, it returns an array, contains 14 ( based on hour of operation) random numbers
         this.getHourSale = function (){
             var newHourSaleArray = [];
             for (var i=this.openHour; i<=this.closeHour; i++){
@@ -37,25 +43,40 @@ class CreateShop {
     }
 }
 
+// the following 3 globle variable is defined for future use
+// totalDailySales is the array will contain 5 arrays generated when every you call the newStoreReport function
+// openTime and closeTime was assigned null as of right now, will be assign value when calling newStoreReport function
+// purpose of this is to determine how many time we will loop when calling dailySales function
+var totalDailySales = [];
+var openTime = '';
+var closeTime = '';
 
-
-
+// this is the main function will generate the content of report table
 
 function newStoreReport (name, minCust, maxCust, avgSale, openHour, closeHour){
+    // storeName will create a new object when every this is called with premiters
     var storeName = new CreateShop(name, minCust, maxCust, avgSale, openHour, closeHour);
+    // the fullowing saleArray is very important. it has to be defined, or, when ever you call
+    // storeName.getHourSale() you will get new sales numbers
     var saleArray = storeName.getHourSale();
-    console.log(saleArray);
     var parentEl = document.getElementById(storeName.name);
     var storeEl = document.createElement('td');
+    // the following step is to push the 1st array contains 1st store hourly sales data into the totalDailySales array
+    totalDailySales.push(saleArray);
+    // the following step defines open and close time for function DailySales. 
+    // but you can hard code it for now
+    openTime = storeName.openHour;
+    closeTime = storeName.closeHour;
+    // next two steps write store names to the 1st collom of table
     storeEl.textContent = storeName.name;
     parentEl.appendChild(storeEl);
-    console.log(saleArray);
+    // the loop write all the hourly sales details into the row
     for (var i=0; i <= storeName.closeHour-storeName.openHour; i++){
         var tableEl = document.createElement('td');
         tableEl.textContent = saleArray[i];
         parentEl.appendChild(tableEl);
-        console.log(saleArray[i]);
     }
+    // following is my way of adding daily totals
     var saleSum = 0;
     var sumEl = document.createElement('td');
     for (var a=0; a<saleArray.length; a++){
@@ -65,8 +86,25 @@ function newStoreReport (name, minCust, maxCust, avgSale, openHour, closeHour){
     parentEl.appendChild(sumEl);
 }
 
+// this function is to calculate the hourly sale date for all locations, and write it on the very bottom of table
+function dailySales (){
+    var parentEl = document.getElementById('Total');
+    var totalEl = document.createElement('td');
+    var allLocation = 0;
+    totalEl.textContent = 'Total';
+    parentEl.appendChild(totalEl);
+    for (var b=0; b<= closeTime-openTime;b++){
+        var totalNumEl = document.createElement('td');
+        var sumDaily = totalDailySales[0][b] + totalDailySales[1][b] + totalDailySales[2][b] +totalDailySales[3][b] + totalDailySales[4][b];
+        totalNumEl.textContent = sumDaily;
+        parentEl.appendChild(totalNumEl);
+        allLocation += sumDaily;
+    }
+    var writeAllLocation = document.createElement('td');
+    writeAllLocation.textContent = allLocation;
+    parentEl.appendChild(writeAllLocation);
 
-
+}
 
 // var SeattleShop = {
 //     name : 'Seattle',
