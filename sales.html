@@ -3,9 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SALES</title>
+    <title>Sales</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/app.js"></script>
+
 </head>
 <body>
-    
+    <div id="head">
+        <header>
+            <a href="index.html" title="home page">
+                <img src=img/salmon.png width=300px href="index.html">
+            </a>
+            <h1 id="header">
+                Salmon Cookies
+            </h1>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li class="nav">
+                    About us
+                </li>
+                <li class="nav">
+                    <a href=sales.html>Sales</a>
+                </li>
+                <li class="nav">
+                    Online Order
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    <div id= "main">
+        <section id=table>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Location</th>
+                    <th>Min / Cust</th>
+                    <th>Max / Cust</th>
+                    <th>Avg Cookie / Sale</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Seattle</td>
+                    <td>23</td>
+                    <td>65</td>
+                    <td>6.3</td>
+                  </tr>
+                  <tr>
+                    <td>Tokyo</td>
+                    <td>3</td>
+                    <td>24</td>
+                    <td>1.2</td>
+                  </tr>
+                  <tr>
+                    <td>Dubai</td>
+                    <td>11</td>
+                    <td>38</td>
+                    <td>3.7</td>
+                  </tr>
+                  <tr>
+                    <td>Paris</td>
+                    <td>20</td>
+                    <td>38</td>
+                    <td>2.3</td>
+                  </tr>
+                  <tr>
+                    <td>Lima</td>
+                    <td>2</td>
+                    <td>16</td>
+                    <td>4.6</td>
+                  </tr>
+                </tbody>
+              </table>
+        </section>    
+        <section id="sales">
+            <button id="reportBut" onclick="show('report')">Click here to see the report</button>
+            <table id="report" style="display: none;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>6:00am:</th>
+                        <th>7:00am:</th>
+                        <th>8:00am:</th>
+                        <th>9:00am:</th>
+                        <th>10:00am:</th>
+                        <th>11:00am:</th>
+                        <th>12:00am:</th>
+                        <th>1:00pm:</th>
+                        <th>2:00pm:</th>
+                        <th>3:00pm:</th>
+                        <th>4:00pm:</th>
+                        <th>5:00pm:</th>
+                        <th>6:00pm:</th>
+                        <th>7:00pm:</th>
+                        <th>Daily Total</th>
+                    </tr>
+                </thead>
+                <tbody id=reportBody>
+                    <tr id="Seattle">
+                        <script>newStoreReport('Seattle',23,65,6.3,6,19)</script>
+                    </tr>
+                    <tr id="Tokyo">
+                        <script>newStoreReport('Tokyo',3,24,1.2,6,19)</script>
+                    </tr>
+                    <tr id="Dubai">
+                        <script>newStoreReport('Dubai',11,38,3.7,6,19)</script>
+                    </tr>
+                    <tr id="Paris">
+                        <script>newStoreReport('Paris',20,38,2.3,6,19)</script>
+                    </tr>
+                    <tr id="Lima">
+                        <script>newStoreReport('Lima',2,16,4.6,6,19)</script>
+                    </tr>
+                    <tr id="Total">
+                        <script>dailySales()</script>
+                    </tr> -->
+                </tbody>
+            </table>    
+            <!-- <ul id="Seattle">
+                <button id="SeattleBut" onclick="show('SeattleReport')">Click here to see Seattle Sales report</button>
+                <div id="SeattleReport">
+            <ul id="Tokyo">
+                <button id="TokyoBut" onclick="show('TokyoReport')">Click here to see Tokyo Sales report</button>
+                <div id="TokyoReport">
+                    <script>TokyoSales()</script>
+                </div>
+            </ul>
+            <ul id="Dubai">
+                <button id = "DubaiBut" onclick="show('DubaiReport')">Click here to see Dubai Sales report</button>
+                <div id="DubaiReport">
+                    <script>DubaiSales()</script>
+                </div>
+            </ul>
+            <ul id="Paris">
+                <button id = "ParisBut" onclick="show('ParisReport')">Click here to see Paris Sales report</button>
+                <div id="ParisReport">
+                    <script>ParisSales()</script>
+                </div>
+            </ul>
+            <ul id="Lima">
+                <button id= "LimaBut" onclick="show('LimaReport')">Click here to see Lima Sales report</button>
+                <div id="LimaReport">
+                    <script>LimaSales()</script>
+                </div>
+            </ul> -->
+
+        </section>
+    </div>
+    <div id='foot'>
+        <footer>
+            <section id="info">
+                <p>Address: 2901 3rd Ave, Seattle WA 98XXX</p>
+                <p>Email: info@salmoncookies.com</p>
+            </section>
+            <section id="map">
+                <iframe width="250" height="250" src="https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=Address%3A%202901%203rd%20Ave%2C%20Seattle%2C%20WA%2098121+(The%20Flower%20Shop)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">&lt;a href="https://www.maps.ie/coordinates.html"&gt;find my coordinates&lt;/a&gt;</iframe>
+            </section>
+        </footer>
+    </div>
 </body>
 </html>
