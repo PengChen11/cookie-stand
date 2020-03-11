@@ -12,7 +12,7 @@ function show(ElementID) {
 
 // Here's how I defined the constructor
 
-class CreateShop {
+class CreateShop1 {
     // this constructor defines 6 properties, but as of right now, you can hard code the openHour and closeHour
     // I do it in this way for future reference
     constructor(name, minCust, maxCust, avgSale, openHour, closeHour) {
@@ -60,7 +60,7 @@ var storeArray =[];
 // this is the main function will generate the content of report table
 function newStoreReport (name, minCust, maxCust, avgSale, openHour, closeHour){
     // store will create a new object when every this is called with premiters
-     var store = new CreateShop(name, minCust, maxCust, avgSale, openHour, closeHour);
+     var store = new CreateShop1(name, minCust, maxCust, avgSale, openHour, closeHour);
      //these new objects will be stored inside Array storeArray
      storeArray.push(store);
     // the fullowing saleArray is very important. it has to be defined, or, when ever you call
