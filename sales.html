@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/app.js"></script>
+
 </head>
 <body>
     <div id="head">
@@ -79,27 +80,52 @@
               </table>
         </section>    
         <section id="sales">
-            <style>
-                #SeatleReport {
-                    display:none;
-                }
-                #TokyoReport {
-                    display: none;
-                }
-                #DubaiReport {
-                    display: none;
-                }
-                #ParisReport {
-                    display: none;
-                }
-
-            </style>
-            <ul id="Seattle">
+            <button id="reportBut" onclick="show('report')">Click here to see the report!</button>
+            <table id="report" style="display: none;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>6:00am:</th>
+                        <th>7:00am:</th>
+                        <th>8:00am:</th>
+                        <th>9:00am:</th>
+                        <th>10:00am:</th>
+                        <th>11:00am:</th>
+                        <th>12:00am:</th>
+                        <th>1:00pm:</th>
+                        <th>2:00pm:</th>
+                        <th>3:00pm:</th>
+                        <th>4:00pm:</th>
+                        <th>5:00pm:</th>
+                        <th>6:00pm:</th>
+                        <th>7:00pm:</th>
+                        <th>Daily Total</th>
+                    </tr>
+                </thead>
+                <tbody id=reportBody>
+                    <tr id="Seattle">
+                        <script>newStoreReport('Seattle',23,65,6.3,6,19)</script>
+                    </tr>
+                    <tr id="Tokyo">
+                        <script>newStoreReport('Tokyo',3,24,1.2,6,19)</script>
+                    </tr>
+                    <tr id="Dubai">
+                        <script>newStoreReport('Dubai',11,38,3.7,6,19)</script>
+                    </tr>
+                    <tr id="Paris">
+                        <script>newStoreReport('Paris',20,38,2.3,6,19)</script>
+                    </tr>
+                    <tr id="Lima">
+                        <script>newStoreReport('Lima',2,16,4.6,6,19)</script>
+                    </tr>
+                    <tr id="Total">
+                        <th>Total</th>
+                    </tr> -->
+                </tbody>
+            </table>    
+            <!-- <ul id="Seattle">
                 <button id="SeattleBut" onclick="show('SeattleReport')">Click here to see Seattle Sales report</button>
                 <div id="SeattleReport">
-                    <script>SeattleSales()</script>
-                </div>
-            </ul>
             <ul id="Tokyo">
                 <button id="TokyoBut" onclick="show('TokyoReport')">Click here to see Tokyo Sales report</button>
                 <div id="TokyoReport">
@@ -123,11 +149,11 @@
                 <div id="LimaReport">
                     <script>LimaSales()</script>
                 </div>
-            </ul>
+            </ul> -->
 
         </section>
     </div>
-    <div id=foot>
+    <div id='foot'>
         <footer>
             <section id="info">
                 <p>Address: 2901 3rd Ave, Seattle WA 98XXX</p>
