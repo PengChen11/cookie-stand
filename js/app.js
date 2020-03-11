@@ -50,28 +50,35 @@ class CreateShop {
 var totalDailySales = [];
 var openTime = '';
 var closeTime = '';
+// var SeattleShop;
+// var TokyoShop;
+// var DubaiShop;
+// var ParisShop;
+// var LimaShop;
+var storeArray =[];
 
 // this is the main function will generate the content of report table
-
 function newStoreReport (name, minCust, maxCust, avgSale, openHour, closeHour){
-    // storeName will create a new object when every this is called with premiters
-    var storeName = new CreateShop(name, minCust, maxCust, avgSale, openHour, closeHour);
+    // store will create a new object when every this is called with premiters
+     var store = new CreateShop(name, minCust, maxCust, avgSale, openHour, closeHour);
+     //these new objects will be stored inside Array storeArray
+     storeArray.push(store);
     // the fullowing saleArray is very important. it has to be defined, or, when ever you call
     // storeName.getHourSale() you will get new sales numbers
-    var saleArray = storeName.getHourSale();
-    var parentEl = document.getElementById(storeName.name);
+    var saleArray = store.getHourSale();
+    var parentEl = document.getElementById(store.name);
     var storeEl = document.createElement('td');
     // the following step is to push the 1st array contains 1st store hourly sales data into the totalDailySales array
     totalDailySales.push(saleArray);
     // the following step defines open and close time for function DailySales. 
     // but you can hard code it for now
-    openTime = storeName.openHour;
-    closeTime = storeName.closeHour;
+    openTime = store.openHour;
+    closeTime = store.closeHour;
     // next two steps write store names to the 1st collom of table
-    storeEl.textContent = storeName.name;
+    storeEl.textContent = store.name;
     parentEl.appendChild(storeEl);
     // the loop write all the hourly sales details into the row
-    for (var i=0; i <= storeName.closeHour-storeName.openHour; i++){
+    for (var i=0; i <= store.closeHour-store.openHour; i++){
         var tableEl = document.createElement('td');
         tableEl.textContent = saleArray[i];
         parentEl.appendChild(tableEl);
@@ -85,6 +92,41 @@ function newStoreReport (name, minCust, maxCust, avgSale, openHour, closeHour){
     sumEl.textContent = saleSum;
     parentEl.appendChild(sumEl);
 }
+console.log(storeArray);
+
+// function newStoreReport (object,name, minCust, maxCust, avgSale, openHour, closeHour){
+//     // storeName will create a new object when every this is called with premiters
+//      object = new CreateShop(name, minCust, maxCust, avgSale, openHour, closeHour);
+//     // the fullowing saleArray is very important. it has to be defined, or, when ever you call
+//     // storeName.getHourSale() you will get new sales numbers
+//     var saleArray = object.getHourSale();
+//     var parentEl = document.getElementById(object.name);
+//     var storeEl = document.createElement('td');
+//     // the following step is to push the 1st array contains 1st store hourly sales data into the totalDailySales array
+//     totalDailySales.push(saleArray);
+//     // the following step defines open and close time for function DailySales. 
+//     // but you can hard code it for now
+//     openTime = object.openHour;
+//     closeTime = object.closeHour;
+//     // next two steps write store names to the 1st collom of table
+//     storeEl.textContent = object.name;
+//     parentEl.appendChild(storeEl);
+//     // the loop write all the hourly sales details into the row
+//     for (var i=0; i <= object.closeHour-object.openHour; i++){
+//         var tableEl = document.createElement('td');
+//         tableEl.textContent = saleArray[i];
+//         parentEl.appendChild(tableEl);
+//     }
+//     // following is my way of adding daily totals
+//     var saleSum = 0;
+//     var sumEl = document.createElement('td');
+//     for (var a=0; a<saleArray.length; a++){
+//         saleSum+=saleArray[a];
+//     }
+//     sumEl.textContent = saleSum;
+//     parentEl.appendChild(sumEl);
+//     console.log(object);
+// }
 
 // this function is to calculate the hourly sale date for all locations, and write it on the very bottom of table
 function dailySales (){

@@ -67,7 +67,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 80%;
-    font-size: 20px;
+    font-size: 15px;
   }
   
   td, th {
@@ -80,6 +80,6 @@ table {
     background-color: #dddddd;
   }
 
-  #SeattleReport {
-    display:none;
+  #report {
+    font-size: 15px;
   }
