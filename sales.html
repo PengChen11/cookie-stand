@@ -81,6 +81,7 @@
         </section>    
         <section id="sales">
             <button id="reportBut" onclick="show('report')">Click here to see the report</button>
+            <button id="report2But" onclick="show('report2')">Click here to see the report in another JS methord</button>
             <table id="report" style="display: none;">
                 <thead>
                     <tr>
@@ -122,7 +123,33 @@
                         <script>dailySales()</script>
                     </tr> -->
                 </tbody>
+            </table>  
+            <table id="report2" style="display: none;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>6:00am:</th>
+                        <th>7:00am:</th>
+                        <th>8:00am:</th>
+                        <th>9:00am:</th>
+                        <th>10:00am:</th>
+                        <th>11:00am:</th>
+                        <th>12:00am:</th>
+                        <th>1:00pm:</th>
+                        <th>2:00pm:</th>
+                        <th>3:00pm:</th>
+                        <th>4:00pm:</th>
+                        <th>5:00pm:</th>
+                        <th>6:00pm:</th>
+                        <th>7:00pm:</th>
+                        <th>Daily Total</th>
+                    </tr>
+                </thead>
+                <tbody id=report2Body>
+                    
+                </tbody>
             </table>    
+  
             <!-- <ul id="Seattle">
                 <button id="SeattleBut" onclick="show('SeattleReport')">Click here to see Seattle Sales report</button>
                 <div id="SeattleReport">
