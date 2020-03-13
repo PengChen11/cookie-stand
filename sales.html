@@ -6,8 +6,7 @@
     <title>Sales</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/app.js"></script>
-
+    <script src="js/headcode.js"></script>
 </head>
 <body>
     <div id="head">
@@ -16,7 +15,7 @@
                 <img src=img/salmon.png width=300px href="index.html">
             </a>
             <h1 id="header">
-                Salmon Cookies
+                <a href="index.html">Salmon Cookies</a>
             </h1>
         </header>
         <nav id="nav">
@@ -28,7 +27,7 @@
                     <a href=sales.html>Sales</a>
                 </li>
                 <li class="nav">
-                    Online Order
+                    <a href="store.html">Online Order</a>
                 </li>
             </ul>
         </nav>
@@ -36,6 +35,7 @@
     </div>
     <div id= "main">
         <section id=table>
+            <p>This is our starting point. We have the following 5 stores with the known sales info in the table.</p>
             <table>
                 <thead>
                   <tr>
@@ -80,11 +80,38 @@
               </table>
         </section>    
         <section id="sales">
-            <button id="reportBut" onclick="show('report')">Click here to see the report</button>
-            <table id="report" style="display: none;">
-                <thead>
+            <br>
+            <button id="report2But" >Click here to see the sales report</button>
+            <button id="formBut">Click here to add new stores</button>
+            <br>
+            <form id="addStoreForm" style="display: none;">
+                <p style="font-size: 30px;">Please fill out the following form for new store info</p>
+                <label>
+                    Store Location:
+                    <input type="text" name="location"></input>
+                    <br>
+                </label>
+                <label>
+                    The minimum number of customers per hour: 
+                    <input type="text" name="minCust"></input><br>
+                </label>
+                <label>
+                    The maximum number of customers per hour:
+                    <input type="text" name="maxCust"></input><br>
+                </label>
+                <label>
+                    The average number of cookies purchased per customer:
+                    <input type="text" name="avgSale"></input><br>
+                </label>
+                <button type="submit" id="addStoreBut">Click to submit</button>
+
+            </form>
+            <br>
+            <br>
+            <table id="report2" style="display: none;">
+                <thead id = "report2Head">
                     <tr>
-                        <th></th>
+                        <th>Location</th>
                         <th>6:00am:</th>
                         <th>7:00am:</th>
                         <th>8:00am:</th>
@@ -102,55 +129,10 @@
                         <th>Daily Total</th>
                     </tr>
                 </thead>
-                <tbody id=reportBody>
-                    <tr id="Seattle">
-                        <script>newStoreReport('Seattle',23,65,6.3,6,19)</script>
-                    </tr>
-                    <tr id="Tokyo">
-                        <script>newStoreReport('Tokyo',3,24,1.2,6,19)</script>
-                    </tr>
-                    <tr id="Dubai">
-                        <script>newStoreReport('Dubai',11,38,3.7,6,19)</script>
-                    </tr>
-                    <tr id="Paris">
-                        <script>newStoreReport('Paris',20,38,2.3,6,19)</script>
-                    </tr>
-                    <tr id="Lima">
-                        <script>newStoreReport('Lima',2,16,4.6,6,19)</script>
-                    </tr>
-                    <tr id="Total">
-                        <script>dailySales()</script>
-                    </tr> -->
+                <tbody id=report2Body>
+                    
                 </tbody>
             </table>    
-            <!-- <ul id="Seattle">
-                <button id="SeattleBut" onclick="show('SeattleReport')">Click here to see Seattle Sales report</button>
-                <div id="SeattleReport">
-            <ul id="Tokyo">
-                <button id="TokyoBut" onclick="show('TokyoReport')">Click here to see Tokyo Sales report</button>
-                <div id="TokyoReport">
-                    <script>TokyoSales()</script>
-                </div>
-            </ul>
-            <ul id="Dubai">
-                <button id = "DubaiBut" onclick="show('DubaiReport')">Click here to see Dubai Sales report</button>
-                <div id="DubaiReport">
-                    <script>DubaiSales()</script>
-                </div>
-            </ul>
-            <ul id="Paris">
-                <button id = "ParisBut" onclick="show('ParisReport')">Click here to see Paris Sales report</button>
-                <div id="ParisReport">
-                    <script>ParisSales()</script>
-                </div>
-            </ul>
-            <ul id="Lima">
-                <button id= "LimaBut" onclick="show('LimaReport')">Click here to see Lima Sales report</button>
-                <div id="LimaReport">
-                    <script>LimaSales()</script>
-                </div>
-            </ul> -->
-
         </section>
     </div>
     <div id='foot'>
@@ -164,5 +146,7 @@
             </section>
         </footer>
     </div>
+    <script src="js/app.js"></script>
+
 </body>
 </html>
