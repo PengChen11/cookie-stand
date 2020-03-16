@@ -117,7 +117,7 @@ CreateShop.prototype.writeRow = function (){
         this.addRow();
     // this is when there's more than one store in the system and we need to get rid of the "total" row created by addRow(), then put the new row, do the "total" Row again
     } else if (CreateShopArray.length > 1){
-        table.lastChild.innerHTML = null;
+        table.lastChild.remove();
         this.addRow();
     }
 };

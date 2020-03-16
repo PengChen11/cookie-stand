@@ -125,7 +125,7 @@ button {
   tr:nth-child(even) {
     background-color:lightgray;
   }
-#report2Head{
+  thead{
     background-color:lightgray;
 
 }
